@@ -1,0 +1,76 @@
+// PROBLEME 1
+/* 
+Nom: Produit scalaire
+Description: Ecrire un algorithme qui détermine, pour n paires de vecteurs donnés, si deux vecteurs de RI donné sont orthogonaux en appelant la procédure dot_product. Le produit scalaire de deux vecteurs orthogonaux est nul. 
+*/
+
+// Définition de la procédure
+void dot_product(int v1[], int v2[], int size, int *ps) { 
+    // Initialise ps à 0 
+    *ps = 0; 
+AI:
+    
+    // Boucle qui calcule le produit scalaire en additionnant les produits des éléments correspondants 
+    for (int i = 0; i < size; i++) { 
+        *ps += v1[i] * v2[i]; 
+    } 
+} 
+
+// Algorithme qui détermine si deux vecteurs sont orthogonaux 
+int main() { 
+    // n paires de vecteurs
+    int n; 
+    // taille des vecteurs
+    int size; 
+    // Variable pour le produit scalaire
+    int ps; 
+    
+    // Boucle qui parcourt chaque paire de vecteurs 
+    for (int i = 0; i < n; i++) { 
+        int v1[size], v2[size]; 
+        // Remplir le premier vecteur avec des élements donnés 
+        // Remplir le deuxième vecteur avec des éléments donnés 
+        dot_product(v1, v2, size, &ps); 
+        if (ps == 0) 
+            printf("Les vecteurs sont orthogonaux\n"); 
+        else 
+            printf("Les vecteurs ne sont pas orthogonaux\n"); 
+    } 
+    return 0; 
+}
+
+/******************************************************************************************/
+
+
+//PROBLEME 2
+//initialiser la somme 
+int somme = 0;
+
+//initialiser le tableau et les tailles des vecteurs
+int vecteur1[N], vecteur2[M]; 
+
+//utiliser une boucle imbriquée
+for(i=0; i<N; i++){ 
+  for(j=0; j<M; j++){ 
+    //comparer chaque élément de l'ensemble un avec le deuxième ensemble 
+    if(vecteur1[i] != vecteur2[j]){ 
+      //ajoutez cet élément à la somme
+      somme += vecteur1[i]; 
+    } 
+  } 
+} 
+
+//ajouter des éléments du deuxième ensemble 
+for(j=0; j<M; j++){ 
+  for(i=0; i<N; i++){ 
+    if(vecteur2[j] != vecteur1[i]){ 
+      somme += vecteur2[j]; 
+    } 
+  } 
+} 
+
+//afficher la somme des éléments uniques
+printf("La somme des éléments uniques est de %d.\n", somme); 
+
+//terminer le programme
+return 0;
